@@ -8,8 +8,26 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-    
+  myTodoList = [ 'Add your ToDo entries here!'];
+  nextTodo = "";
+
+  constructor(public navCtrl: NavController) {  
+  }
+
+  delItem(index) {
+  	this.myTodoList.splice(index, 1);
+  	//
+  }
+
+  addItem() {
+  	if (this.nextTodo != "") {
+  		this.myTodoList.push(this.nextTodo);
+  		this.nextTodo = "";
+  	}
+  }
+
+  isAddDisabled() {
+    return this.nextTodo == "";
   }
 
 }

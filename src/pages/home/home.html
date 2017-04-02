@@ -7,11 +7,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
     <ion-item>
       <ion-input placeholder="Buy Milk" type="text" [(ngModel)]="nextTodo"></ion-input>
     </ion-item>
-  </ion-list>
   <button [disabled]="isAddDisabled()" ion-button full (click)="addItem()"><ion-icon name="add"></ion-icon> Add</button>
   <ion-list>
     <ion-item-sliding *ngFor="let todo of myTodoList; let i = index">
